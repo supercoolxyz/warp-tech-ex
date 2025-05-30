@@ -3,6 +3,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/dashboard">Dashboard</router-link> |
     <router-link to="/user-stories">User Stories</router-link> |
+    <router-link to="/milestones">Milestones</router-link> |
     <router-link to="/about">About</router-link>  </nav>
   <router-view/>
 </template>

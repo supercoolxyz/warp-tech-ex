@@ -39,6 +39,18 @@ export class UserStoryService {
     return true;
   }
 
+  public exportStoryAsTable(story: UserStory): string[][] {
+    return [["ID", "Title", "Description"], [story.id, story.title, story.description || ""]];
+  }
+
+  public exportAllStoriesAsTable(): string[][] {
+    const table = [["ID", "Title", "Description"]];
+    for (const s of this.stories) {
+      table.push([s.id, s.title, s.description || ""]);
+    }
+    return table;
+  }
+
   private generateId(): string {
     return Math.random().toString(36).substr(2, 9);
   }
