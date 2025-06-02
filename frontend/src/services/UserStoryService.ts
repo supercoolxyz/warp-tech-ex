@@ -32,6 +32,18 @@ export class UserStoryService {
     return this.stories;
   }
 
+  public getUserStoryById(id: string): UserStory | undefined {
+    return this.stories.find(s => s.id === id);
+  }
+
+  public editUserStory(id: string, title: string, description?: string): boolean {
+    const story = this.stories.find(s => s.id === id);
+    if (!story) return false;
+    story.title = title;
+    story.description = description;
+    return true;
+  }
+
   public deleteUserStory(id: string): boolean {
     const idx = this.stories.findIndex(s => s.id === id);
     if (idx === -1) return false;
