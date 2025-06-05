@@ -30,6 +30,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/Scrum/MilestoneView.vue')
   },
   {
+    path: '/actors',
+    name: 'actors',
+    component: () => import('@/views/Scrum/ScrumActorsView.vue')
+  },  
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
